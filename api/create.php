@@ -14,7 +14,7 @@ $item = new Data($db);
 
 $item->name = $_GET['name'];
 $item->email = $_GET['email'];
-$item->designation = $_GET['designation'];
+$item->job = $_GET['job'];
 $item->created = date('Y-m-d H:i:s');
 if ($item->createData()) {
     echo 'Data berhasil dibuat.';
