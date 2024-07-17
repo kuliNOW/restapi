@@ -12,7 +12,7 @@ $database = new Database();
 $db = $database->getConnection();
 $item = new Data($db);
 
-$item->id = isset($_GET['id']) ? $_GET['id'] : die();
+$item->id = isset($_GET['id']) ? intval($_GET['id']) : die();
 $item->name = $_GET['name'];
 $item->email = $_GET['email'];
 $item->job = $_GET['job'];
