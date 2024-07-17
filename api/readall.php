@@ -13,13 +13,13 @@ $records = $items->getDataAll();
 $itemCount = $records->num_rows;
 echo json_encode($itemCount);
 if ($itemCount > 0) {
-    $employeeArr = array();
-    $employeeArr["body"] = array();
-    $employeeArr["itemCount"] = $itemCount;
+    $data = array();
+    $data["body"] = array();
+    $data["itemCount"] = $itemCount;
     while ($row = $records->fetch_assoc()) {
-        array_push($employeeArr["body"], $row);
+        array_push($data["body"], $row);
     }
-    echo json_encode($employeeArr);
+    echo json_encode($data);
 } else {
     http_response_code(404);
     echo json_encode(
